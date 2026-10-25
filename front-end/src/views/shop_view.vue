@@ -1,11 +1,12 @@
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 // Variable area
 const products = ref([])
 const productsCategory = ref([])
 const selectedCategory = ref('')
+const searchQuery = ref('')
 
 // Fetch categories
 const fetchCategory = async () => {
@@ -53,6 +54,12 @@ async function fetchProducts(categoryName) {
   }
 }
 
+// Computed area
+
+
+
+
+
 onMounted(() => {
   fetchCategory()
 })
@@ -81,6 +88,8 @@ onMounted(() => {
         class="search-bar"
         type="text"
         placeholder="Search..."
+        v-model="searchQuery"
+        @change=""
       />
 
       <button>🔍︎</button>
