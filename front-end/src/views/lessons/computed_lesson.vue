@@ -74,6 +74,7 @@ const totalPrice = computed(() => {
       </div>
     </div>
   </div>
+  <p>As we can see when we change the value in the example, it update the total price by itself c:</p>
 </template>
 
 <style scoped>
