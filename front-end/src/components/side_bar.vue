@@ -7,6 +7,7 @@
       <RouterLink to="/shop">𖠩 Shop</RouterLink>
       <RouterLink to="/cart"> Cart</RouterLink>
       <RouterLink to="/training">training Area</RouterLink>
+      <RouterLink to="/lesson">Lesson</RouterLink>
     </nav>
   </aside>
 </template>
