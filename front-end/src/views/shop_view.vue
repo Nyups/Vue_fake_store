@@ -54,7 +54,6 @@ async function fetchProducts(categoryName) {
   }
 }
 
-
 // Computed area for the Search Bar
 // const searchFilter = computed (() => {
 //   return products.value.title.filter(product => 
@@ -71,7 +70,6 @@ const searchFilter = computed(() => {
     )
   )
 })
-
 
 
 
