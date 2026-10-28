@@ -1,11 +1,14 @@
 <script setup>
 import { ref } from 'vue';
+// Lesson import
 import computed_lesson from './lessons/computed_lesson.vue';
+import props_lesson from './lessons/props_lesson.vue';
+import emit_lesson from './lessons/emit_lesson.vue';
 
-const button = ref(false)
+const computedLesson = ref(false)
 
 function toggle() {
-    button.value = !button.value
+    computedLesson.value = !computedLesson.value
 }
 </script>
 
@@ -24,7 +27,11 @@ function toggle() {
 
 <br>
     <div class="lessons">
-        <computed_lesson v-if="button"/>
+        <computed_lesson v-if="computedLesson"/>
+        <div class="props_emit">
+        <props_lesson/>
+        <emit_lesson/>
+        </div>
     </div>
 </template>
 
