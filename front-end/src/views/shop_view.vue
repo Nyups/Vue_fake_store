@@ -54,8 +54,23 @@ async function fetchProducts(categoryName) {
   }
 }
 
-// Computed area
 
+// Computed area for the Search Bar
+// const searchFilter = computed (() => {
+//   return products.value.title.filter(product => 
+//     product.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+//   )
+// })
+
+// Corrected filter :
+
+const searchFilter = computed(() => {
+  return products.value.filter(product => //Access the array first
+    product.title.toLowerCase().includes( // Access the .title in the said array and compare it in lower case
+      searchQuery.value.toLowerCase() //Compare the search to the array title in lower case
+    )
+  )
+})
 
 
 
@@ -83,13 +98,12 @@ onMounted(() => {
           {{ item }}
         </option>
       </select>
-
+      <!-- Search Bar -->
       <input
         class="search-bar"
         type="text"
         placeholder="Search..."
         v-model="searchQuery"
-        @change=""
       />
 
       <button>🔍︎</button>
@@ -98,7 +112,7 @@ onMounted(() => {
     <div class="product-grid">
       <article
         class="product-card"
-        v-for="product in products"
+        v-for="product in searchFilter"
         :key="product.id"
       >
         <img :src="product.thumbnail" :alt="product.title" />
