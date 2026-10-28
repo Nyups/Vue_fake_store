@@ -3,7 +3,6 @@ import { ref } from 'vue';
 // Lesson import
 import computed_lesson from './lessons/computed_lesson.vue';
 import props_lesson from './lessons/props_lesson.vue';
-import emit_lesson from './lessons/emit_lesson.vue';
 
 const computedLesson = ref(false)
 
@@ -30,7 +29,6 @@ function toggle() {
         <computed_lesson v-if="computedLesson"/>
         <div class="props_emit">
         <props_lesson/>
-        <emit_lesson/>
         </div>
     </div>
 </template>
