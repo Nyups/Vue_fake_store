@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 // Lesson import
 import computed_lesson from './lessons/computed_lesson.vue';
-import props_lesson from './lessons/props_lesson.vue';
+import parent_component from './lessons/parent_component.vue';
 
 const computedLesson = ref(false)
 
@@ -28,7 +28,7 @@ function toggle() {
     <div class="lessons">
         <computed_lesson v-if="computedLesson"/>
         <div class="props_emit">
-        <props_lesson/>
+        <parent_component/>
         </div>
     </div>
 </template>

@@ -1,8 +1,6 @@
-
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 
-// Variable area
 const products = ref([])
 const productsCategory = ref([])
 const selectedCategory = ref('')
