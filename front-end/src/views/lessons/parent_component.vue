@@ -1,5 +1,5 @@
 <script setup>
-// [PROPS : Give data to components].
+// [PROPS : Give data to components / read only].
 // Supposing we have a lesson file (well well well) has a parent component called "props_lesson.vue.vue"
 // and a child component called "emit_lessons.vue".
 // The "props" component know which data we're displaying.
@@ -14,6 +14,40 @@
 
 // All of the main data are stored in the parent, sent to the child component via "props",
 // And modified / updated in the parent via "emits" from the Child
+
+
+
+
+   //       PARENT (App.vue)
+   //    ┌────────────────────┐
+   //    │  const card = ref() │
+   //    │                    │
+   //    │  status: student   │
+   //    └─────────┬──────────┘
+   //              │
+   //              │ Props
+   //              ▼
+   //    ┌────────────────────┐
+   //    │ CHILD (ProfileCard)│
+   //    │                    │
+   //    │  Displays profile  │
+   //    │                    │
+   //    │  Button clicked    │
+   //    └─────────┬──────────┘
+   //              │
+   //              │ Emit: update-status
+   //              │ Payload: 'developer'
+   //              ▼
+   //    ┌────────────────────┐
+   //    │  PARENT (App.vue)  │
+   //    │                    │
+   //    │  updateStatus()    │
+   //    │                    │
+   //    │  status = developer│
+   //    └────────────────────┘
+
+
+
 
 
 import { ref } from 'vue';
